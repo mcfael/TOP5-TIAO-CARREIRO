@@ -171,8 +171,6 @@ No diretório `backend`:
 - `php artisan test`
 
 ---
-
-## 📝 Licença
-Este projeto está licenciado sob a licença **MIT**.  
+  
 
 ---
