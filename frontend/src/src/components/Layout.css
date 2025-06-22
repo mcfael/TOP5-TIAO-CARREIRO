@@ -1,0 +1,97 @@
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 4rem 1rem;
+  background: url('/background.jpg') center/cover no-repeat;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+header .artist-img {
+  position: relative;
+  z-index: 1;
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+header h1,
+header h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 0;
+}
+nav {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+}
+nav a {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  color: #FFD700; /* cor nova */
+  border-radius: 4px;
+}
+
+nav a.active,
+nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #FFF; /* Se quiser mudar a cor ao hover também */
+}
+
+/* Estilos existentes... */
+
+.auth-buttons {
+  display: center;
+  padding: 8px 16px;
+  gap: 30px;
+}
+
+.login-button, .register-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+.register-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.register-button:hover {
+  background-color: #0b7dda;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: #f44336; /* cor de fundo */
+  color: #FFD700; /* cor do texto */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+  color: #FFF; /* cor texto no hover */
+}

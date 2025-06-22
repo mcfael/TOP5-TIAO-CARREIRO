@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  backend:
+    build: 
+      context: ./backend
+    volumes:
+      - ./backend:/var/www/html
+    command: ["./entrypoint.sh"]
+    ports:
+      - "8000:8000"
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: top5
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    networks:
+      - my-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      - mysql
+      - redis
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/src/dist:/app
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: top5
+    ports:
+      - "1001:3306"
+    networks:
+      - my-network
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
