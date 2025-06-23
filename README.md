@@ -83,6 +83,8 @@ Antes de começar, certifique-se de ter:
    docker-compose up -d --build
    ```
 3. **Acesse**  
+   - Login: admin@teste.com
+   - Senha: senha123
    - Backend: `http://localhost:8000/api`  
    - Frontend: `http://localhost:3000`
 
