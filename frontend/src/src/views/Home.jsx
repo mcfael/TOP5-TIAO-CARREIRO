@@ -36,7 +36,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await api.get(`/musicas?limit=5&page=${page}`)
+        const res = await api.get(`/musicas?limit=5&page=${page}&aprovada=true`)
         const { data, meta } = res.data
 
         const enriched = await Promise.all(
